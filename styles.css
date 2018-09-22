@@ -1,0 +1,24 @@
+* {
+	text-align: center;
+}
+h3 {
+	display: inline;
+}
+::selection {
+	background-color: #9f9;
+}
+::-moz-selection {
+	background-color: #9f9;
+}
+img, button, br {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;	
+}
+input[type="number"]:focus {   
+  border-color: #6c6;
+  box-shadow: 0 0 8px #6c6;
+}
