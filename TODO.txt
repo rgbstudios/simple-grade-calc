@@ -1,2 +1,1 @@
-use new logo
 move assets in folders
