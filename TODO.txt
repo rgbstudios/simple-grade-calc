@@ -1,2 +1,2 @@
+use new logo
 move assets in folders
-update icon
