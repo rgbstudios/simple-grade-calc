@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- V.1.0.0 -->
 <html>
 <head>
 <title>Simple Grade Calc</title>
@@ -39,23 +38,37 @@
 <b>Calculate:</b> <input id="calcToggle" type="checkbox" checked data-toggle="toggle" data-on="Final Grade" data-off="Assignment Score" data-onstyle="success" data-offstyle="success">
 
 <br><br>
-<label for="curGrade">Current Grade:</label>
-<input id="curGrade" class="form-control" type="number" value="75" min="0" maxlength="10">
-<br>
-<label for="assWeight">Assignment Weight:</label>
-<input id="assWeight" class="form-control" type="number" value="20" min="0" max="100" maxlength="10">
-<br>
-<label for="assScore">Assignment Score:</label>
-<input id="assScore" class="form-control" type="number" value="85" min="0" maxlength="10">
-<br>
-<label for="finGrade">Final Grade:</label>
-<input disabled="true" id="finGrade" class="form-control" type="text" value="" min="0" maxlength="10">
-<br>
+<div class="input-group my-2">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Current Grade</span>
+	</div>
+	<input id="curGrade" class="form-control" type="number" value="75" min="0" maxlength="10" aria-label="Current Grade">
+</div>
+<div class="input-group my-2">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Assignment Weight</span>
+	</div>
+	<input id="assWeight" class="form-control" type="number" value="20" min="0" max="100" maxlength="10" aria-label="Assignment Weight">
+</div>
+<div class="input-group my-2">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Assignment Score</span>
+	</div>
+	<input id="assScore" class="form-control" type="number" value="85" min="0" maxlength="10" aria-label="Assignment Score">
+</div>
+<div class="input-group my-2">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Final Grade</span>
+	</div>
+	<input disabled="true" id="finGrade" class="form-control" type="number" value="" min="0" maxlength="10" aria-label="Final Grade">
+</div>
+
 <p id="warningText" class="bg-warning"></p>
 
 <hr>
-<p class="text-success"><i class="fas fa-info-circle"></i> Enter inputs as a percentage (usually between 0-100)</p>
-<p class="text-success"><i class="fas fa-info-circle"></i> Use <kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> to navigate inputs, also use arrow keys</p>
+<p><i class="fas fa-info-circle"></i> Enter inputs as a percentage (usually between 0-100)</p>
+<p id="keyboard-shortcuts-p"><i class="fas fa-info-circle"></i> Use <kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> to navigate inputs, also use arrow keys</p>
+<p><a href="mailto:justingolden@rgbstudios.org" target="_blank">justingolden@rgbstudios.org</a></p>
 
 </div>
 <script src="script.js"></script>

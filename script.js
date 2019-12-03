@@ -1,18 +1,18 @@
 let curGrade, assWeight, assScore, finGrade, warningText;
 
-$(function() {
+$( ()=> {
 	curGrade = $('#curGrade');
 	assWeight = $('#assWeight');
 	assScore = $('#assScore');
 	finGrade = $('#finGrade');
 	warningText = $('#warningText');
 
-	curGrade.on('keyup', updateGrade);
-	assWeight.on('keyup', updateGrade);
-	assScore.on('keyup', updateGrade);
-	finGrade.on('keyup', updateGrade);
+	curGrade.keyup(updateGrade);
+	assWeight.keyup(updateGrade);
+	assScore.keyup(updateGrade);
+	finGrade.keyup(updateGrade);
 
-	$('#calcToggle').change(function() {
+	$('#calcToggle').change( ()=> {
       if(finGrade.prop('disabled') ) {
       	finGrade.prop('disabled', '');
       	assScore.prop('disabled', 'true');
