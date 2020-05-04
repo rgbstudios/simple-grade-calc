@@ -47,6 +47,10 @@ a {
 #weight-svg {
 	margin-left: 1rem;
 }
+#weight-arc {
+	-webkit-transition: d 0.2s;
+	transition: d 0.2s;
+}
 @media only screen and (max-width: 768px) { /* mobile */
 	#keyboard-shortcuts-p {
 		display: none;
