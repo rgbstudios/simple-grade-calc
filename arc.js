@@ -1,30 +1,23 @@
 // https://stackoverflow.com/a/18473154/4907950
 
-function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-  var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+function polarToCartesian(cx, cy, r, deg) {
+	let rad = (deg-90) * Math.PI / 180.0;
 
-  return {
-    x: centerX + (radius * Math.cos(angleInRadians)),
-    y: centerY + (radius * Math.sin(angleInRadians))
-  };
+	return {
+		x: cx + (r * Math.cos(rad) ),
+		y: cy + (r * Math.sin(rad) )
+	};
 }
 
-function describeArc(x, y, radius, startAngle, endAngle){
+function describeArc(x, y, r, startAngle, endAngle){
+	let start = polarToCartesian(x, y, r, endAngle);
+	let end = polarToCartesian(x, y, r, startAngle);
+	let largeArcFlag = endAngle - startAngle <= 180 ? 0 : 1;
 
-    var start = polarToCartesian(x, y, radius, endAngle);
-    var end = polarToCartesian(x, y, radius, startAngle);
-
-    var largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
-
-    var d = [
-        "M", start.x, start.y, 
-        "A", radius, radius, 0, largeArcFlag, 0, end.x, end.y
-    ].join(" ");
-
-    return d;       
+	return d = [
+		'M', start.x, start.y, 
+		'A', r, r, 0, largeArcFlag, 0, end.x, end.y
+	].join(' ');
 }
 
-function drawArc(percent) {
-  let deg = percent * 360;
-  document.getElementById("weight-arc").setAttribute("d", describeArc(16,16,12,0,deg));
-}
+const drawArc = (percent)=> $('#weight-arc').attr('d', describeArc(16,16,12,0,percent*360) );
