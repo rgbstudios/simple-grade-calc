@@ -40,6 +40,7 @@ function updateGrade() {
 		} else {
 			warningText.html('').css('display','none');
 			let result = (current_grade*(100-assignment_weight)/100)+(assignment_score*assignment_weight/100);
+			result = round(result);
 			finGrade.val(result);
 		}
 	} else { //calc assignment grade
@@ -50,7 +51,10 @@ function updateGrade() {
 		} else {
 			warningText.html('').css('display','none');
 			result = (final_grade-(current_grade*(100-assignment_weight)/100) )/assignment_weight*100;
+			result = round(result);
 			assScore.val(result);
 		}
 	}
 }
+
+const round = (num, places=4) => Math.round(num * Math.pow(10,places) ) / Math.pow(10,places);
