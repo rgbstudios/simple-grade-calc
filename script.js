@@ -47,6 +47,7 @@ function updateGrade() {
 			nowarn();
 			let result = round(current_grade*(100-assignment_weight)/100)+(assignment_score*assignment_weight/100);
 			finGrade.val(result);
+			drawArc(assignment_weight/100);
 		}
 	} else { // assignment grade
 		if(isNaN(current_grade) || isNaN(assignment_weight) || isNaN(final_grade) ) {
@@ -57,6 +58,7 @@ function updateGrade() {
 			nowarn();
 			let result = round( (final_grade-(current_grade*(100-assignment_weight)/100) )/assignment_weight*100);
 			assScore.val(result);
+			drawArc(assignment_weight/100);
 		}
 	}
 }

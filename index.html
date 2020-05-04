@@ -46,6 +46,10 @@ Calculate: &nbsp; <input id="calcToggle" type="checkbox" checked data-toggle="to
 		<span class="input-group-text"><i class="fas fa-balance-scale-left"></i> Assignment Weight</span>
 	</div>
 	<input id="assWeight" class="form-control" type="number" value="20" min="0" max="100" maxlength="10" aria-label="Assignment Weight">
+
+	<svg id="weight-svg" width="32px" height="32px">
+		<path id="weight-arc" fill="none" stroke="#393" stroke-width="8px"/>
+	</svg>
 </div>
 <div class="input-group my-3">
 	<div class="input-group-prepend">
@@ -74,6 +78,7 @@ Calculate: &nbsp; <input id="calcToggle" type="checkbox" checked data-toggle="to
 
 </div>
 <script src="script.js"></script>
+<script src="arc.js"></script>
 
 <!--Google Analytics-->
 <script>

@@ -44,6 +44,9 @@ a {
 	font-weight: bold;
 	color: #393 !important;
 }
+#weight-svg {
+	margin-left: 1rem;
+}
 @media only screen and (max-width: 768px) { /* mobile */
 	#keyboard-shortcuts-p {
 		display: none;
