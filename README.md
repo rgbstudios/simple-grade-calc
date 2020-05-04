@@ -4,15 +4,16 @@
 
 A simple grade calculator for students
 
-<a href="http://rgbstudios.org/simple-grade-calc">rgbstudios.org/simple-grade-calc</a>
-
+https://rgbstudios.org/simple-grade-calc
 
 <hr>
 
-1.0.0
+Featuring two modes:
 
-by Justin Golden for RGB Studios
+- Calcualte your final grade, by entering your current grade and assignment weight and score
 
-justingolden21.github.io
+- Calcualte your assignment grade necessary, by entering your current grade, assignment weight, and your desired final grade
 
-rgbstudios.org
+<hr>
+
+by [Justin Golden](https://justingolden.me) for [RGB Studios](https://rgbstudios.org)

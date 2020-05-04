@@ -1,7 +1,7 @@
 // https://stackoverflow.com/a/18473154/4907950
 
 function polarToCartesian(cx, cy, r, deg) {
-	let rad = (deg-90) * Math.PI / 180.0;
+	let rad = (deg-90) * Math.PI / 180;
 
 	return {
 		x: cx + (r * Math.cos(rad) ),
