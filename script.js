@@ -17,14 +17,8 @@ $( ()=> {
 		finGrade.prop('disabled', !calcFinGrade);
 		assScore.prop('disabled', calcFinGrade);
 
-		if(!calcFinGrade) {
-			finGrade.parent().find('.input-group-text').addClass('highlight');
-			assScore.parent().find('.input-group-text').removeClass('highlight');
-		}
-		else {
-			assScore.parent().find('.input-group-text').addClass('highlight');
-			finGrade.parent().find('.input-group-text').removeClass('highlight');
-		}
+		finGrade.parent().find('.input-group-text').toggleClass('highlight');
+		assScore.parent().find('.input-group-text').toggleClass('highlight');
 	});
 
 	updateGrade();
