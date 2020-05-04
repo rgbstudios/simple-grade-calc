@@ -13,13 +13,9 @@ $( ()=> {
 	finGrade.keyup(updateGrade);
 
 	$('#calcToggle').change( ()=> {
-		if(finGrade.prop('disabled') ) {
-			finGrade.prop('disabled', '');
-			assScore.prop('disabled', 'true');
-		} else {
-			finGrade.prop('disabled', 'true');
-			assScore.prop('disabled', '');
-		}
+		let calcFinGrade = finGrade.prop('disabled');
+		finGrade.prop('disabled', !calcFinGrade);
+		assScore.prop('disabled', calcFinGrade);		
 	});
 
 	updateGrade();
@@ -27,29 +23,29 @@ $( ()=> {
 });
 
 function updateGrade() {
-	let current_grade = parseInt(curGrade.val() );
-	let assignment_weight = parseInt(assWeight.val() );
-	let assignment_score = parseInt(assScore.val() );
-	let final_grade = parseInt(finGrade.val() );
+	let current_grade = parseFloat(curGrade.val() );
+	let assignment_weight = parseFloat(assWeight.val() );
+	let assignment_score = parseFloat(assScore.val() );
+	let final_grade = parseFloat(finGrade.val() );
 
-	if($('#calcToggle').prop('checked') ) { //calc final grade
+	if($('#calcToggle').prop('checked') ) { // final grade
 		if(isNaN(current_grade) || isNaN(assignment_weight) || isNaN(assignment_score) ) {
-			warningText.html('Please enter current grade, assignment weight, and assignment score').css('display','');
-		} else if(current_grade<0 || assignment_weight<0 || assignment_weight>100 || assignment_score<0 || current_grade==Infinity || assignment_score==Infinity) {
-			warningText.html('Current grade must be at least 0, assignment weight must be between 0 and 100, and assignment score must be at least 0').css('display','');
+			warningText.html('Please enter current grade, assignment weight, and assignment score').show();
+		} else if(!isValid(current_grade) || !isValid(assignment_weight,0,100) || !isValid(assignment_score) ) {
+			warningText.html('Current grade must be at least 0, assignment weight must be between 0 and 100, and assignment score must be at least 0').show();
 		} else {
-			warningText.html('').css('display','none');
+			warningText.html('').hide();
 			let result = (current_grade*(100-assignment_weight)/100)+(assignment_score*assignment_weight/100);
 			result = round(result);
 			finGrade.val(result);
 		}
-	} else { //calc assignment grade
+	} else { // assignment grade
 		if(isNaN(current_grade) || isNaN(assignment_weight) || isNaN(final_grade) ) {
-			warningText.html('Please enter current grade, assignment weight, and final grade').css('display','');
-		} else if(current_grade<0 || assignment_weight<0 || assignment_weight>100 || final_grade<0 || current_grade==Infinity || final_grade==Infinity) {
-			warningText.html('Current grade must be at least 0, assignment weight must be between 0 and 100, and final grade must be at least 0').css('display','');
+			warningText.html('Please enter current grade, assignment weight, and final grade').show();
+		} else if(!isValid(current_grade) || !isValid(assignment_weight,0,100) || !isValid(final_grade) ) {
+			warningText.html('Current grade must be at least 0, assignment weight must be between 0 and 100, and final grade must be at least 0').show();
 		} else {
-			warningText.html('').css('display','none');
+			warningText.html('').hide();
 			result = (final_grade-(current_grade*(100-assignment_weight)/100) )/assignment_weight*100;
 			result = round(result);
 			assScore.val(result);
@@ -57,4 +53,6 @@ function updateGrade() {
 	}
 }
 
-const round = (num, places=4) => Math.round(num * Math.pow(10,places) ) / Math.pow(10,places);
+const isValid = (num, min=0, max=Infinity) => !isNaN(num) && num!=Infinity && num >= min && num <= max;
+
+const round = (num, places=3) => Number( (num).toFixed(places) );
