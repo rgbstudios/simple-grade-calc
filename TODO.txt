@@ -1,1 +1,7 @@
-move assets in folders
+yes:
+	move assets in folders
+maybe:
+	pwa
+eh:
+	url params?
+	info modal with links to email, fullscreen, share?
