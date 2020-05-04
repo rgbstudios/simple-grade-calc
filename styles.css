@@ -36,6 +36,10 @@ input[type="number"]:focus {
 	padding: 0.5rem;
 	border-radius: 0.25rem;
 }
+a {
+	font-weight: bold;
+	color: #393 !important;
+}
 @media only screen and (max-width: 768px) { /* mobile */
 	#keyboard-shortcuts-p {
 		display: none;
