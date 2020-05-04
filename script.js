@@ -42,16 +42,19 @@ function updateGrade() {
 		if(isNaN(current_grade) || isNaN(assignment_weight) || isNaN(assignment_score) ) {
 			warn('Please enter current grade, assignment weight, and assignment score');
 			return;
-		} else if(!isValid(current_grade) || !isValid(assignment_weight,0,100) || !isValid(assignment_score) ) {
+		}
+		if(!isValid(current_grade) || !isValid(assignment_weight,0,100) || !isValid(assignment_score) ) {
 			warn('Current grade must be at least 0, assignment weight must be between 0 and 100, and assignment score must be at least 0');
 			return;
 		}
 		finGrade.val(round(current_grade*(100-assignment_weight)/100)+(assignment_score*assignment_weight/100) );
-	} else { // assignment grade
+	}
+	else { // assignment grade
 		if(isNaN(current_grade) || isNaN(assignment_weight) || isNaN(final_grade) ) {
 			warn('Please enter current grade, assignment weight, and final grade');
 			return;
-		} else if(!isValid(current_grade) || !isValid(assignment_weight,0,100) || !isValid(final_grade) ) {
+		}
+		if(!isValid(current_grade) || !isValid(assignment_weight,0,100) || !isValid(final_grade) ) {
 			warn('Current grade must be at least 0, assignment weight must be between 0 and 100, and final grade must be at least 0');
 			return;
 		}
