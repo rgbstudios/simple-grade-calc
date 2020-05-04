@@ -13,17 +13,17 @@ $( ()=> {
 	finGrade.keyup(updateGrade);
 
 	$('#calcToggle').change( ()=> {
-      if(finGrade.prop('disabled') ) {
-      	finGrade.prop('disabled', '');
-      	assScore.prop('disabled', 'true');
-      } else {
-      	finGrade.prop('disabled', 'true');
-      	assScore.prop('disabled', '');
-      }
-    });
+		if(finGrade.prop('disabled') ) {
+			finGrade.prop('disabled', '');
+			assScore.prop('disabled', 'true');
+		} else {
+			finGrade.prop('disabled', 'true');
+			assScore.prop('disabled', '');
+		}
+	});
 
-    updateGrade();
-    curGrade.select();
+	updateGrade();
+	curGrade.select();
 });
 
 function updateGrade() {
