@@ -32,6 +32,10 @@ input[type="number"]:focus {
 .input-group-text i {
 	margin-right: 0.25rem;
 }
+.input-group-text.highlight {
+	background-color: #393;
+	color: #fff;
+}
 #warningText {
 	padding: 0.5rem;
 	border-radius: 0.25rem;
