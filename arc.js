@@ -14,7 +14,7 @@ function describeArc(x, y, r, startAngle, endAngle){
 	let end = polarToCartesian(x, y, r, startAngle);
 	let largeArcFlag = endAngle - startAngle <= 180 ? 0 : 1;
 
-	return d = [
+	return [
 		'M', start.x, start.y, 
 		'A', r, r, 0, largeArcFlag, 0, end.x, end.y
 	].join(' ');

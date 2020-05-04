@@ -2,7 +2,6 @@ yes:
 	move assets in folders
 	still rounding display problems (test case: final,78,16,85)
 	visual indicator of three grades (color between red yellow green with approx letter grade next to it)
-	visual indicator of assignment weight with pie chart or bar?
 maybe:
 	pwa
 eh:
