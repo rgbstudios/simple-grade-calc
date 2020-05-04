@@ -35,7 +35,7 @@ function updateGrade() {
 	if($('#calcToggle').prop('checked') ) { //calc final grade
 		if(isNaN(current_grade) || isNaN(assignment_weight) || isNaN(assignment_score) ) {
 			warningText.html('Please enter current grade, assignment weight, and assignment score').css('display','');
-		} else if(current_grade<0 || assignment_weight<0 || assignment_weight>100 || assignment_score<0) {
+		} else if(current_grade<0 || assignment_weight<0 || assignment_weight>100 || assignment_score<0 || current_grade==Infinity || assignment_score==Infinity) {
 			warningText.html('Current grade must be at least 0, assignment weight must be between 0 and 100, and assignment score must be at least 0').css('display','');
 		} else {
 			warningText.html('').css('display','none');
@@ -46,7 +46,7 @@ function updateGrade() {
 	} else { //calc assignment grade
 		if(isNaN(current_grade) || isNaN(assignment_weight) || isNaN(final_grade) ) {
 			warningText.html('Please enter current grade, assignment weight, and final grade').css('display','');
-		} else if(current_grade<0 || assignment_weight<0 || assignment_weight>100 || final_grade<0) {
+		} else if(current_grade<0 || assignment_weight<0 || assignment_weight>100 || final_grade<0 || current_grade==Infinity || final_grade==Infinity) {
 			warningText.html('Current grade must be at least 0, assignment weight must be between 0 and 100, and final grade must be at least 0').css('display','');
 		} else {
 			warningText.html('').css('display','none');
