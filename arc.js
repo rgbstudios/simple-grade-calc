@@ -20,4 +20,20 @@ function describeArc(x, y, r, startAngle, endAngle){
 	].join(' ');
 }
 
-const drawArc = (percent)=> $('#weight-arc').attr('d', describeArc(16,16,12,0,percent*360) );
+// https://www.smashingmagazine.com/2019/03/svg-circle-decomposition-paths/
+function describeCircle(cx, cy, r) {
+	return [
+		'M', (cx-r), cy,
+		'a', r, r, 0, 1, 0, (r*2), 0,
+		'a', r, r, 0, 1, 0, (-r*2), 0
+	].join(' ');
+}
+
+const drawArc = (percent)=> {
+	let d;
+	if(percent==1)
+		d = describeCircle(16,16,12);
+	else
+		d = describeArc(16,16,12,0,percent*360);
+	$('#weight-arc').attr('d', d);
+};

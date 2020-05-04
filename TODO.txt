@@ -1,6 +1,6 @@
 yes:
 	move assets in folders
-	still rounding display problems (test case: final,78,16,85)
+	still rounding display problems (test case: final,78,16,85 or 7,41,85)
 	visual indicator of three grades (color between red yellow green with approx letter grade next to it)
 maybe:
 	pwa
