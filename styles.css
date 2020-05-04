@@ -1,9 +1,6 @@
 * {
 	text-align: center;
 }
-h3 {
-	display: inline;
-}
 ::selection {
 	color: #fff;
 	background-color: #6c6;
@@ -20,9 +17,20 @@ img, button, br {
 	-webkit-user-select: none;
 	-ms-user-select: none;	
 }
+h1 {
+	display: inline;
+	font-size: 150% !important;
+	font-weight: lighter !important;
+}
+input[type="number"] {
+	font-size: 120%;
+}
 input[type="number"]:focus {   
   border-color: #6c6;
-  box-shadow: 0 0 8px #6c6;
+  box-shadow: 0.25rem 0.25rem 0 #6c6;
+}
+#warningText {
+	padding: 0.25rem;
 }
 @media only screen and (max-width: 768px) { /* mobile */
 	#keyboard-shortcuts-p {
