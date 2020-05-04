@@ -29,6 +29,9 @@ input[type="number"]:focus {
   border-color: #6c6;
   box-shadow: 0.25rem 0.25rem 0 #6c6;
 }
+.input-group-text i {
+	margin-right: 0.25rem;
+}
 #warningText {
 	padding: 0.25rem;
 }

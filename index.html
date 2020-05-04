@@ -16,7 +16,7 @@
 <meta id="metaColor3" name="apple-mobile-web-app-status-bar-style" content="#393">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
@@ -32,29 +32,34 @@
 <h1><img src="icon.svg" width="48px" alt="logo"></img> Grade Calculator <sub>for students</sub></h1>
 <hr>
 
-<b>Calculate:</b> &nbsp; <input id="calcToggle" type="checkbox" checked data-toggle="toggle" data-on="Final Grade" data-off="Assignment Score" data-onstyle="success" data-offstyle="success">
+Calculate &nbsp; <input id="calcToggle" type="checkbox" checked data-toggle="toggle" data-on="Final Grade" data-off="Assignment Score" data-onstyle="success" data-offstyle="success">
 
 <div class="input-group my-3">
 	<div class="input-group-prepend">
-		<span class="input-group-text">Current Grade</span>
+		<!-- <i class="fas fa-book"></i> -->
+		<span class="input-group-text"><i class="fas fa-clock"></i> Current Grade</span>
 	</div>
 	<input id="curGrade" class="form-control" type="number" value="75" min="0" maxlength="10" aria-label="Current Grade">
 </div>
 <div class="input-group my-3">
 	<div class="input-group-prepend">
-		<span class="input-group-text">Assignment Weight</span>
+		<!-- <i class="fas fa-percent"></i> -->
+		<span class="input-group-text"><i class="fas fa-balance-scale-left"></i> Assignment Weight</span>
 	</div>
 	<input id="assWeight" class="form-control" type="number" value="20" min="0" max="100" maxlength="10" aria-label="Assignment Weight">
 </div>
 <div class="input-group my-3">
 	<div class="input-group-prepend">
-		<span class="input-group-text">Assignment Score</span>
+		<!-- <i class="fas fa-pen-alt"></i> -->
+		<span class="input-group-text"><i class="fas fa-edit"></i> Assignment Score</span>
 	</div>
 	<input id="assScore" class="form-control" type="number" value="85" min="0" maxlength="10" aria-label="Assignment Score">
 </div>
 <div class="input-group my-3">
 	<div class="input-group-prepend">
-		<span class="input-group-text">Final Grade</span>
+		<!-- <i class="fas fa-check"></i> -->
+		<!-- <i class="fas fa-check-circle"></i> -->
+		<span class="input-group-text"><i class="fas fa-calendar-check"></i> Final Grade</span>
 	</div>
 	<input disabled="true" id="finGrade" class="form-control" type="number" value="" min="0" maxlength="10" aria-label="Final Grade">
 </div>
